@@ -15,7 +15,7 @@ import {
   Eye,
 } from 'lucide-react'
 
-const API_URL = 'http://localhost:8080/api/complaints'
+const API_URL = 'http://https://smartcomplaintmanagement-backend.onrender.com/api/complaints'
 
 function AdminDashboard() {
   const navigate = useNavigate()

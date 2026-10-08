@@ -54,7 +54,7 @@ function Feedback() {
       setLoading(true)
 
       const response = await axios.get(
-        `http://localhost:8080/api/complaints/${complaintId.trim()}`
+        `http://https://smartcomplaintmanagement-backend.onrender.com/api/complaints/${complaintId.trim()}`
       )
 
       setComplaint(response.data)
@@ -133,7 +133,7 @@ function Feedback() {
 
 
       await axios.post(
-        `http://localhost:8080/api/complaints/${complaint.id}/feedback`,
+        `http://https://smartcomplaintmanagement-backend.onrender.com/api/complaints/${complaint.id}/feedback`,
         null,
         {
           params: {

@@ -25,7 +25,7 @@ function MyComplaints() {
       setError('')
 
       const response = await axios.get(
-        'http://localhost:8080/api/complaints'
+        'http://https://smartcomplaintmanagement-backend.onrender.com/api/complaints'
       )
 
       setComplaints(response.data)

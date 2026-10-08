@@ -62,7 +62,7 @@ function SubmitComplaint() {
       setLoading(true)
 
       const response = await axios.post(
-        'http://localhost:8080/api/complaints',
+        'http://https://smartcomplaintmanagement-backend.onrender.com/api/complaints',
         {
           name: formData.name,
           email: formData.email,

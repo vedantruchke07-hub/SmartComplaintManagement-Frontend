@@ -56,7 +56,7 @@ function StudentRegister() {
 
     try {
      await axios.post(
-    'http://localhost:8080/api/student/register',
+    'http://https://smartcomplaintmanagement-backend.onrender.com/api/student/register',
     {
       name: name,
       email: email,

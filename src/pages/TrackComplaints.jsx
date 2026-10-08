@@ -46,7 +46,7 @@ function TrackComplaints() {
 
 
       const response = await axios.get(
-        `http://localhost:8080/api/complaints/${complaintId.trim()}`
+        `http://https://smartcomplaintmanagement-backend.onrender.com/api/complaints/${complaintId.trim()}`
       )
 
 

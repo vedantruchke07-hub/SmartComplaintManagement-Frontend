@@ -15,7 +15,7 @@ import {
   MessageSquare,
 } from 'lucide-react'
 
-const API_URL = 'http://localhost:8080/api/complaints'
+const API_URL = 'http://https://smartcomplaintmanagement-backend.onrender.com/api/complaints'
 
 function AdminComplaintDetails() {
   const { id } = useParams()
