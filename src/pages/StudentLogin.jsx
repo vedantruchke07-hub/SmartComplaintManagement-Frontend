@@ -40,15 +40,25 @@ function StudentLogin() {
 
     try {
 
-      await axios.post(
-        'http://https://smartcomplaintmanagement-backend.onrender.com/api/student/login',
-        {
-          email: email,
-          password: password,
-        }
-      )
+      const response = await axios.post(
+  '/api/student/login',
+  {
+    email: email,
+    password: password,
+  }
+)
 
-      navigate('/student')
+sessionStorage.setItem(
+  'studentName',
+  response.data.name
+)
+
+sessionStorage.setItem(
+  'studentEmail',
+  response.data.email
+)
+
+navigate('/dashboard')
 
     } catch (err) {
 

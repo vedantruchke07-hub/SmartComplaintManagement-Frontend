@@ -8,8 +8,7 @@ import {
   AlertTriangle,
 } from 'lucide-react'
 
-const API_URL = 'http://https://smartcomplaintmanagement-backend.onrender.com/api/complaints'
-
+const API_URL = '/api/complaints'
 function AdminFeedback() {
   const [complaints, setComplaints] = useState([])
   const [loading, setLoading] = useState(true)

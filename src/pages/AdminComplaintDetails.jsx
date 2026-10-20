@@ -15,7 +15,7 @@ import {
   MessageSquare,
 } from 'lucide-react'
 
-const API_URL = 'http://https://smartcomplaintmanagement-backend.onrender.com/api/complaints'
+const API_URL = '/api/complaints'
 
 function AdminComplaintDetails() {
   const { id } = useParams()
@@ -161,10 +161,7 @@ function AdminComplaintDetails() {
             Complaint Details
           </div>
 
-          <h2>Complaint #{complaint.id}</h2>
-          <div style={{ color: 'red', fontSize: '20px', fontWeight: 'bold' }}>
-  TEST FEEDBACK PAGE
-</div>
+   <h2>Complaint #{complaint.id}</h2>
 
           <p>
             Review the complete complaint information and current

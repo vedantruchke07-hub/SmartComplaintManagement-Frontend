@@ -32,7 +32,7 @@ function AdminLogin() {
 
     try {
       await axios.post(
-        'http://https://smartcomplaintmanagement-backend.onrender.com/api/admin/login',
+        '/api/admin/login',
         {
           email: email,
           password: password,

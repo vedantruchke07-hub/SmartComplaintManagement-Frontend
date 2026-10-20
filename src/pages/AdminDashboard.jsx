@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 import {
@@ -15,10 +15,11 @@ import {
   Eye,
 } from 'lucide-react'
 
-const API_URL = 'http://https://smartcomplaintmanagement-backend.onrender.com/api/complaints'
+const API_URL = '/api/complaints'
 
 function AdminDashboard() {
   const navigate = useNavigate()
+  const location = useLocation()
 
   const [complaints, setComplaints] = useState([])
   const [searchTerm, setSearchTerm] = useState('')
@@ -26,6 +27,7 @@ function AdminDashboard() {
   const [refreshing, setRefreshing] = useState(false)
   const [updatingId, setUpdatingId] = useState(null)
   const [error, setError] = useState('')
+  const [actionRemark, setActionRemark] = useState({})
 
   // =====================================================
   // FETCH COMPLAINTS
@@ -60,6 +62,41 @@ function AdminDashboard() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     fetchComplaints()
   }, [])
+
+  // Record a meaningful action by the currently assigned authority.
+  const recordAuthorityAction = async (complaint) => {
+    const authority = (complaint.currentAuthority || '').toUpperCase()
+    const remark = (actionRemark[complaint.id] || '').trim()
+
+    if (!['HOD', 'PRINCIPAL'].includes(authority)) {
+      setError('Only HOD or Principal actions can be recorded here.')
+      return
+    }
+    if (!remark) {
+      setError(`Please enter an action remark for complaint #${complaint.id}.`)
+      return
+    }
+    if (complaint.lastActionAt) {
+      setError('An action has already been recorded for this authority.')
+      return
+    }
+
+    try {
+      setUpdatingId(complaint.id)
+      setError('')
+      await axios.put(`${API_URL}/${complaint.id}/action`, null, {
+        params: { authority, remark },
+      })
+      setActionRemark((previous) => ({ ...previous, [complaint.id]: '' }))
+      await fetchComplaints(true)
+    } catch (err) {
+      console.error(err)
+      setError(err.response?.data?.message ||
+        `Failed to record action for complaint #${complaint.id}.`)
+    } finally {
+      setUpdatingId(null)
+    }
+  }
 
   // =====================================================
   // UPDATE COMPLAINT STATUS
@@ -96,7 +133,11 @@ function AdminDashboard() {
   // STATISTICS
   // =====================================================
 
-  const total = complaints.length
+  const total = complaints.filter(
+  (complaint) =>
+    complaint.status === 'OPEN' ||
+    complaint.status === 'IN_PROGRESS'
+).length
 
   const pending = complaints.filter(
     (complaint) => complaint.status === 'OPEN'
@@ -132,6 +173,9 @@ function AdminDashboard() {
       .toLowerCase()
       .includes(search) ||
     (complaint.status || '')
+      .toLowerCase()
+      .includes(search) ||
+    (complaint.currentAuthority || '')
       .toLowerCase()
       .includes(search)
 
@@ -489,6 +533,7 @@ function AdminDashboard() {
                     <th>Department</th>
                     <th>Priority</th>
                     <th>Status</th>
+                    <th>Current Authority</th>
                     <th>Date</th>
                     <th>Action</th>
                   </tr>
@@ -578,6 +623,19 @@ function AdminDashboard() {
                           </td>
 
 
+                          {/* CURRENT AUTHORITY */}
+                          <td>
+                            <strong>
+                              {(complaint.currentAuthority || 'Not assigned')
+                                .replaceAll('_', ' ')}
+                            </strong>
+                            {complaint.lastActionAt && (
+                              <div style={{ fontSize: 12, marginTop: 5 }}>
+                                Action recorded
+                              </div>
+                            )}
+                          </td>
+
                           {/* DATE */}
 
                           <td>
@@ -602,6 +660,47 @@ function AdminDashboard() {
   <Eye size={15} />
   View
 </button>
+
+                              {/* AUTHORITY ACTION */}
+                              {complaint.status !== 'RESOLVED' &&
+                                ['HOD', 'PRINCIPAL'].includes(
+                                  (complaint.currentAuthority || '').toUpperCase()
+                                ) && (
+                                  complaint.lastActionAt ? (
+                                    <span className="completed-label"
+                                      title={complaint.lastActionRemark || 'Action recorded'}>
+                                      <CheckCircle2 size={15} /> Action Recorded
+                                    </span>
+                                  ) : (
+                                    <div style={{ display: 'flex', gap: 6,
+                                      alignItems: 'center', flexWrap: 'wrap' }}>
+                                      <input
+                                        type="text"
+                                        aria-label={`Action remark for complaint ${complaint.id}`}
+                                        placeholder="Enter action remark"
+                                        value={actionRemark[complaint.id] || ''}
+                                        onChange={(event) => setActionRemark(
+                                          (previous) => ({
+                                            ...previous,
+                                            [complaint.id]: event.target.value,
+                                          })
+                                        )}
+                                        disabled={isUpdating}
+                                        style={{ minWidth: 170, padding: '8px 10px',
+                                          border: '1px solid #ddd', borderRadius: 7 }}
+                                      />
+                                      <button
+                                        type="button"
+                                        className="action-button progress-button"
+                                        onClick={() => recordAuthorityAction(complaint)}
+                                        disabled={isUpdating ||
+                                          !(actionRemark[complaint.id] || '').trim()}
+                                      >
+                                        {isUpdating ? 'Saving...' : 'Record Action'}
+                                      </button>
+                                    </div>
+                                  )
+                                )}
 
                               {/* OPEN → IN_PROGRESS */}
 

@@ -33,10 +33,29 @@ function Dashboard() {
       setError('')
 
       const response = await axios.get(
-        'http://https://smartcomplaintmanagement-backend.onrender.com/api/complaints'
-      )
+  '/api/complaints',
+)
 
-      setComplaints(response.data)
+const data = response.data
+
+const complaintList = Array.isArray(data)
+  ? data
+  : Array.isArray(data?.complaints)
+    ? data.complaints
+    : Array.isArray(data?.data)
+      ? data.data
+      : Array.isArray(data?.content)
+        ? data.content
+        : null
+
+if (complaintList) {
+  setComplaints(complaintList)
+} else {
+  console.error('Unexpected complaints API response:', data)
+  setComplaints([])
+  setError('Complaint data format is unexpected. Please check the backend API response.')
+}
+
 
     } catch (err) {
       console.error(err)
@@ -65,7 +84,11 @@ function Dashboard() {
   // STATISTICS
   // ============================
 
-  const totalComplaints = complaints.length
+  const totalComplaints = complaints.filter(
+  (complaint) =>
+    complaint.status === 'OPEN' ||
+    complaint.status === 'IN_PROGRESS'
+).length
 
   const pendingComplaints = complaints.filter(
     (complaint) =>
@@ -174,9 +197,11 @@ function Dashboard() {
             OVERVIEW
           </p>
 
-          <h2>
-            Good Morning, Vedant
-          </h2>
+
+<h2>
+  Hello, {sessionStorage.getItem('studentName') || 'Student'}
+</h2>
+
 
           <p>
             Here's what's happening with your complaints today.

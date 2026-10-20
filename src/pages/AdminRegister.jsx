@@ -52,7 +52,7 @@ function AdminRegister() {
 
     try {
       await axios.post(
-        'http://https://smartcomplaintmanagement-backend.onrender.com/api/admin/register',
+        '/api/admin/register',
         {
           name: name,
           email: email,

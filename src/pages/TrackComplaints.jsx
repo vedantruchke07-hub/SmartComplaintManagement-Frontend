@@ -45,9 +45,9 @@ function TrackComplaints() {
       setLoading(true)
 
 
-      const response = await axios.get(
-        `http://https://smartcomplaintmanagement-backend.onrender.com/api/complaints/${complaintId.trim()}`
-      )
+     const response = await axios.get(
+  `/api/complaints/${complaintId.trim()}`
+)
 
 
       setComplaint(response.data)

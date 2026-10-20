@@ -3838,3 +3838,1759 @@
     font-size: 25px;
   }
 }
+
+/* =========================================================
+   ADMIN COMPLAINT DETAILS PAGE
+   ========================================================= */
+
+.admin-details-page {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 28px 32px 40px;
+  color: #0f172a;
+}
+
+.admin-details-page .page-header {
+  margin-bottom: 24px;
+}
+
+.admin-details-page .page-header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.admin-details-page .back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid #dbe3ef;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.admin-details-page .back-button:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.admin-details-page .page-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.admin-details-page .page-header h2 {
+  margin: 4px 0 0;
+  color: #0f172a;
+  font-size: 28px;
+  line-height: 1.3;
+  font-weight: 750;
+}
+
+.admin-details-page .page-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.admin-details-page .details-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr);
+  align-items: start;
+  gap: 22px;
+}
+
+.admin-details-page .details-main-card,
+.admin-details-page .details-side-column > .dashboard-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+}
+
+.admin-details-page .details-side-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.admin-details-page .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px;
+  border-bottom: 1px solid #e8edf4;
+}
+
+.admin-details-page .card-header h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.admin-details-page .card-header p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.admin-details-page .details-content {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  padding: 24px 20px;
+}
+
+.admin-details-page .detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.admin-details-page .detail-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #2563eb;
+}
+
+.admin-details-page .detail-section-title h4 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.admin-details-page .description-box {
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #334155;
+  font-size: 13px;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.admin-details-page .details-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.admin-details-page .detail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid #e8edf4;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.admin-details-page .detail-item > span:first-child {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.admin-details-page .detail-item > strong {
+  color: #0f172a;
+  font-size: 12px;
+  line-height: 1.6;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.admin-details-page .status-badge,
+.admin-details-page .priority-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-width: 70px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.admin-details-page .status-pending {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.admin-details-page .status-progress {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.admin-details-page .status-resolved {
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.admin-details-page .priority-high {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.admin-details-page .priority-medium {
+  background: #fffbeb;
+  color: #b45309;
+}
+
+.admin-details-page .priority-low {
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.admin-details-page .student-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 6px 20px;
+}
+
+.admin-details-page .student-detail-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+  padding: 15px 0;
+  border-bottom: 1px solid #edf1f6;
+}
+
+.admin-details-page .student-detail-row:last-child {
+  border-bottom: 0;
+}
+
+.admin-details-page .detail-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.admin-details-page .student-detail-row > div:last-child {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.admin-details-page .student-detail-row span,
+.admin-details-page .status-detail span,
+.admin-details-page .feedback-rating > span {
+  color: #64748b;
+  font-size: 11px;
+}
+
+.admin-details-page .student-detail-row strong {
+  color: #0f172a;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.admin-details-page .status-detail {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+}
+
+.admin-details-page .large-status-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+}
+
+.admin-details-page .large-status-icon.status-pending {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.admin-details-page .large-status-icon.status-progress {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.admin-details-page .large-status-icon.status-resolved {
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.admin-details-page .status-detail > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin-details-page .status-detail strong {
+  color: #0f172a;
+  font-size: 14px;
+}
+
+.admin-details-page .feedback-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.admin-details-page .feedback-rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #e8edf4;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+.admin-details-page .feedback-rating strong {
+  color: #0f172a;
+  font-size: 14px;
+}
+
+.admin-details-page .feedback-comment {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-details-page .feedback-comment p {
+  margin: 0;
+  color: #475569;
+  font-size: 12px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.admin-details-page .empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 250px;
+  color: #64748b;
+}
+
+.admin-details-page .empty-state p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.admin-details-page .error-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 13px;
+}
+
+@media (max-width: 1000px) {
+  .admin-details-page .details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-details-page {
+    padding: 20px 14px 30px;
+  }
+
+  .admin-details-page .page-header h2 {
+    font-size: 23px;
+  }
+
+  .admin-details-page .card-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .admin-details-page .details-content {
+    padding: 18px 15px;
+  }
+
+  .admin-details-page .details-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-details-page .student-details,
+  .admin-details-page .status-detail,
+  .admin-details-page .feedback-details {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+/* =========================================
+   ARMIET ADMIN THEME
+   ========================================= */
+
+.admin-shell {
+  --admin-maroon: #650d20;
+  --admin-maroon-dark: #390712;
+  --admin-gold: #e5b957;
+  --admin-gold-light: #fff2cf;
+  --admin-text: #172033;
+  --admin-muted: #64748b;
+  --admin-border: #e5e7eb;
+  background: #f7f8fb;
+}
+
+.admin-shell .admin-sidebar {
+  background: linear-gradient(
+    180deg,
+    var(--admin-maroon-dark) 0%,
+    var(--admin-maroon) 100%
+  );
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-shell .admin-sidebar .brand {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.admin-shell .admin-sidebar .brand-icon {
+  background: var(--admin-gold);
+  color: var(--admin-maroon-dark);
+  border-radius: 10px;
+}
+
+.admin-shell .admin-sidebar .brand-text {
+  color: #ffffff;
+}
+
+.admin-shell .admin-sidebar .brand-text span {
+  color: var(--admin-gold);
+}
+
+.admin-shell .admin-sidebar .nav-section-title {
+  color: #e5c9a1;
+}
+
+.admin-shell .admin-sidebar .nav-item {
+  color: #f4e9eb;
+  border-radius: 9px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.admin-shell .admin-sidebar .nav-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.admin-shell .admin-sidebar .nav-item.active {
+  background: var(--admin-gold);
+  color: var(--admin-maroon-dark);
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.admin-shell .admin-sidebar .sidebar-bottom {
+  border-top-color: rgba(255, 255, 255, 0.14);
+}
+
+.admin-shell .admin-sidebar .collapse-button {
+  color: #f4e9eb;
+}
+
+.admin-shell .admin-sidebar .collapse-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.admin-shell .main-area {
+  background: #f7f8fb;
+}
+
+.admin-shell .topbar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--admin-border);
+}
+
+.admin-shell .topbar h1 {
+  color: var(--admin-text);
+}
+
+.admin-shell .breadcrumb {
+  color: var(--admin-muted);
+}
+
+.admin-shell .breadcrumb span {
+  color: #c1a16a;
+}
+
+.admin-shell .search-box {
+  border-color: var(--admin-border);
+  background: #fbfcfe;
+}
+
+.admin-shell .search-box:focus-within {
+  border-color: var(--admin-gold);
+  box-shadow: 0 0 0 3px rgba(229, 185, 87, 0.15);
+}
+
+.admin-shell .icon-button {
+  border-color: var(--admin-border);
+  color: var(--admin-maroon);
+}
+
+.admin-shell .icon-button:hover {
+  background: var(--admin-gold-light);
+  border-color: var(--admin-gold);
+}
+
+.admin-shell .avatar {
+  background: var(--admin-gold-light);
+  color: var(--admin-maroon);
+  border: 1px solid #f0dca9;
+}
+
+.admin-shell .user-info strong {
+  color: var(--admin-text);
+}
+
+.admin-shell .user-info span {
+  color: var(--admin-muted);
+}
+
+/* Admin page headings */
+.admin-shell .dashboard-content h2,
+.admin-shell .dashboard-content h3 {
+  color: var(--admin-text);
+}
+
+/* Admin cards and tables */
+.admin-shell .dashboard-card {
+  border-color: var(--admin-border);
+  border-radius: 13px;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.035);
+}
+
+.admin-shell .dashboard-card .card-header {
+  border-bottom-color: #edf0f5;
+}
+
+.admin-shell .dashboard-card .card-header h3 {
+  color: var(--admin-text);
+}
+
+.admin-shell .dashboard-card .card-header p {
+  color: var(--admin-muted);
+}
+
+/* Primary admin buttons */
+.admin-shell .primary-button,
+.admin-shell .action-button.start-button {
+  background: var(--admin-maroon);
+  border-color: var(--admin-maroon);
+  color: #ffffff;
+}
+
+.admin-shell .primary-button:hover,
+.admin-shell .action-button.start-button:hover {
+  background: var(--admin-maroon-dark);
+  border-color: var(--admin-maroon-dark);
+}
+
+/* Keyboard focus */
+.admin-shell button:focus-visible,
+.admin-shell a:focus-visible {
+  outline: 3px solid rgba(229, 185, 87, 0.75);
+  outline-offset: 2px;
+}
+
+/* ARMIET institutional header */
+.admin-shell .college-brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 112px;
+  padding: 18px 28px;
+  background: #ffffff;
+  border-bottom: 3px solid #e5b957;
+}
+
+.admin-shell .college-brand-name {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  text-align: center;
+}
+
+.admin-shell .college-brand-name > strong {
+  color: #701326;
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: 0.4px;
+}
+
+.admin-shell .college-brand-name > span {
+  color: #64748b;
+  font-size: 11px;
+}
+
+.admin-shell .college-brand-name h2 {
+  margin: 3px 0 0;
+  color: #701326;
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: 0.7px;
+}
+
+.admin-shell .college-system-mark {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.admin-shell .college-system-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border: 2px solid #701326;
+  border-radius: 50%;
+  background: #701326;
+  color: #ffffff;
+}
+
+.admin-shell .college-system-mark > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.admin-shell .college-system-mark strong {
+  color: #172033;
+  font-size: 12px;
+}
+
+.admin-shell .college-system-mark span {
+  color: #475569;
+  font-size: 10px;
+}
+
+.admin-shell .college-system-mark small {
+  color: #701326;
+  font-size: 10px;
+}
+
+@media (max-width: 900px) {
+  .admin-shell .college-brand-header {
+    flex-direction: column;
+    padding: 18px 14px;
+  }
+
+  .admin-shell .college-brand-name > strong {
+    font-size: 14px;
+  }
+
+  .admin-shell .college-brand-name h2 {
+    font-size: 15px;
+  }
+}
+
+/* Student branding: matching ARMIET colors */
+.student-brand .student-brand-icon {
+  background: #e5b957;
+  color: #390712;
+  border-radius: 10px;
+}
+
+.student-brand .student-brand-text {
+  color: #ffffff;
+}
+
+.student-brand .student-brand-text span {
+  color: #e5b957;
+}
+
+
+/* Student college header */
+.student-college-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 112px;
+  padding: 18px 28px;
+  background: #ffffff;
+  border-bottom: 3px solid #e5b957;
+}
+
+.student-college-header .college-brand-name {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  text-align: center;
+}
+
+.student-college-header .college-brand-name > strong {
+  color: #701326;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.student-college-header .college-brand-name > span {
+  color: #64748b;
+  font-size: 11px;
+}
+
+.student-college-header .college-brand-name h2 {
+  margin: 3px 0 0;
+  color: #701326;
+  font-size: 17px;
+}
+
+.student-college-header .college-system-mark {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.student-college-header .college-system-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border: 2px solid #701326;
+  border-radius: 50%;
+  background: #701326;
+  color: #ffffff;
+}
+
+.student-college-header .college-system-mark > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.student-college-header .college-system-mark strong {
+  color: #172033;
+  font-size: 12px;
+}
+
+.student-college-header .college-system-mark span,
+.student-college-header .college-system-mark small {
+  font-size: 10px;
+}
+
+.student-college-header .college-system-mark span {
+  color: #475569;
+}
+
+.student-college-header .college-system-mark small {
+  color: #701326;
+}
+
+@media (max-width: 900px) {
+  .student-college-header {
+    flex-direction: column;
+    padding: 18px 14px;
+  }
+
+  .student-college-header .college-brand-name > strong {
+    font-size: 14px;
+  }
+
+  .student-college-header .college-brand-name h2 {
+    font-size: 15px;
+  }
+}
+
+
+.student-college-header .college-logo {
+  width: 190px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.student-college-header .college-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-height: 100px;
+}
+
+@media (max-width: 900px) {
+  .student-college-header .college-logo {
+    width: 150px;
+  }
+}
+
+/* ARMIET logo in admin college header */
+.admin-shell .college-logo {
+  width: 210px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-shell .college-logo img {
+  display: block;
+  width: 100%;
+  max-height: 95px;
+  object-fit: contain;
+}
+
+.admin-shell .college-brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 140px;
+  padding: 16px 28px;
+  background: #ffffff;
+  border-bottom: 3px solid #e5b957;
+}
+
+.admin-shell .college-brand-name {
+  flex: 1;
+  text-align: center;
+}
+
+/* Admin horizontal navigation */
+.admin-shell .admin-horizontal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  min-height: 62px;
+  padding: 8px 20px;
+  background: #650d20;
+  border-bottom: 1px solid #e5b957;
+  flex-wrap: wrap;
+}
+
+.admin-shell .admin-horizontal-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 8px;
+  border-bottom: 3px solid transparent;
+}
+
+.admin-shell .admin-horizontal-nav a:hover,
+.admin-shell .admin-horizontal-nav a.active {
+  color: #ffffff;
+  border-bottom-color: #e5b957;
+}
+
+.admin-shell .admin-horizontal-nav a.active {
+  font-weight: 700;
+}
+
+/* Admin maroon-gold theme */
+.admin-shell {
+  --admin-maroon: #650d20;
+  --admin-dark: #390712;
+  --admin-gold: #e5b957;
+  --admin-light-gold: #fff2cf;
+}
+
+.admin-shell .admin-sidebar {
+  background: linear-gradient(180deg, #390712, #650d20);
+}
+
+.admin-shell .admin-sidebar .nav-item.active {
+  background: #e5b957;
+  color: #390712;
+  font-weight: 700;
+  box-shadow: none;
+}
+
+.admin-shell .primary-button,
+.admin-shell .action-button.start-button {
+  background: #650d20;
+  border-color: #650d20;
+  color: #ffffff;
+}
+
+.admin-shell .primary-button:hover,
+.admin-shell .action-button.start-button:hover {
+  background: #390712;
+  border-color: #390712;
+}
+
+.admin-shell .main-area {
+  background: #f7f5f2;
+}
+
+/* Admin dashboard cards */
+.admin-shell .dashboard-card {
+  border: 1px solid #ece5df;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 14px rgba(57, 7, 18, 0.06);
+}
+
+.admin-shell .dashboard-card .card-header {
+  border-bottom-color: #eee5df;
+}
+
+.admin-shell .dashboard-content h2,
+.admin-shell .dashboard-content h3 {
+  color: #390712;
+}
+
+.admin-shell .search-box:focus-within {
+  border-color: #e5b957;
+  box-shadow: 0 0 0 3px rgba(229, 185, 87, 0.18);
+}
+
+.admin-shell button:focus-visible,
+.admin-shell a:focus-visible {
+  outline: 3px solid #e5b957;
+  outline-offset: 2px;
+}
+
+
+/* ===== ARMIET ADMIN LAYOUT FIX ===== */
+
+.admin-page-shell {
+  --armiet-maroon: #650d20;
+  --armiet-dark: #390712;
+  --armiet-gold: #e5b957;
+  --armiet-border: #e5e7eb;
+
+  min-height: 100vh;
+  width: 100%;
+  background: #f7f8fb;
+  overflow-x: hidden;
+}
+
+/* College header occupies its own full-width row */
+.admin-page-shell > .college-brand-header {
+  position: relative;
+  z-index: 120;
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr) 245px;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  min-height: 144px;
+  padding: 16px 28px;
+  background: #fff;
+  border-bottom: 3px solid var(--armiet-gold);
+}
+
+.admin-page-shell .college-logo {
+  width: 100%;
+  max-width: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-page-shell .college-logo img {
+  display: block;
+  width: 100%;
+  max-height: 100px;
+  object-fit: contain;
+}
+
+.admin-page-shell .college-brand-name {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  text-align: center;
+}
+
+.admin-page-shell .college-brand-name > strong {
+  color: #701326;
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+}
+
+.admin-page-shell .college-brand-name > span {
+  color: #64748b;
+  font-size: 11px;
+}
+
+.admin-page-shell .college-brand-name h2 {
+  margin: 3px 0 0;
+  color: #701326;
+  font-size: 17px;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+}
+
+.admin-page-shell .college-system-mark {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  min-width: 0;
+}
+
+.admin-page-shell .college-system-icon {
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #701326;
+  border-radius: 50%;
+  background: #701326;
+  color: #fff;
+}
+
+.admin-page-shell .college-system-mark > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.admin-page-shell .college-system-mark strong {
+  color: #172033;
+  font-size: 12px;
+}
+
+.admin-page-shell .college-system-mark span {
+  color: #475569;
+  font-size: 10px;
+}
+
+.admin-page-shell .college-system-mark small {
+  color: #701326;
+  font-size: 10px;
+}
+
+/* Maroon horizontal navbar */
+.admin-page-shell > .admin-horizontal-nav {
+  position: relative;
+  z-index: 110;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  width: 100%;
+  min-height: 62px;
+  padding: 8px 20px;
+  background: var(--armiet-maroon);
+  border-bottom: 1px solid var(--armiet-gold);
+}
+
+.admin-page-shell > .admin-horizontal-nav > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  padding: 0 8px;
+  border-bottom: 3px solid transparent;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.admin-page-shell > .admin-horizontal-nav > a:hover,
+.admin-page-shell > .admin-horizontal-nav > a.active {
+  color: var(--armiet-gold);
+  border-bottom-color: var(--armiet-gold);
+}
+
+.admin-page-shell .horizontal-nav-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.admin-page-shell .horizontal-nav-profile .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #fff;
+  color: var(--armiet-maroon);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.admin-page-shell .horizontal-nav-profile .user-info strong {
+  color: #fff;
+  font-size: 12px;
+}
+
+.admin-page-shell .horizontal-nav-profile .user-info span {
+  color: #f0dce0;
+  font-size: 10px;
+}
+
+.admin-page-shell .horizontal-nav-profile .icon-button {
+  background: transparent;
+  border-color: rgba(255,255,255,.25);
+  color: #fff;
+}
+
+/* Sidebar begins BELOW the college header and navbar */
+.admin-page-shell > .app-shell.admin-shell {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-height: calc(100vh - 206px);
+  background: #f7f8fb;
+}
+
+.admin-page-shell .admin-sidebar {
+  position: sticky;
+  top: 0;
+  left: auto;
+  z-index: 20;
+  align-self: flex-start;
+  flex: 0 0 264px;
+  width: 264px;
+  height: calc(100vh - 206px);
+  min-height: 500px;
+  overflow-y: auto;
+  background: linear-gradient(180deg, #390712, #650d20);
+  border-right: 1px solid rgba(255,255,255,.08);
+}
+
+.admin-page-shell .admin-sidebar.collapsed {
+  flex-basis: 76px;
+  width: 76px;
+}
+
+.admin-page-shell .admin-sidebar .brand-icon {
+  background: var(--armiet-gold);
+  color: var(--armiet-dark);
+}
+
+.admin-page-shell .admin-sidebar .brand-text {
+  color: #fff;
+}
+
+.admin-page-shell .admin-sidebar .brand-text span {
+  color: var(--armiet-gold);
+}
+
+.admin-page-shell .admin-sidebar .nav-section-title {
+  color: #e5c9a1;
+}
+
+.admin-page-shell .admin-sidebar .nav-item {
+  color: #f4e9eb;
+}
+
+.admin-page-shell .admin-sidebar .nav-item.active {
+  background: var(--armiet-gold);
+  color: var(--armiet-dark);
+  box-shadow: none;
+}
+
+.admin-page-shell .admin-sidebar .collapse-button {
+  color: #fff;
+}
+
+/* Main area must take remaining width, never overlap the sidebar */
+.admin-page-shell .main-area,
+.admin-page-shell .main-area.expanded {
+  flex: 1 1 0;
+  width: 0;
+  min-width: 0;
+  min-height: calc(100vh - 206px);
+  margin-left: 0;
+  background: #f7f8fb;
+  transition: none;
+}
+
+.admin-page-shell .main-area > .topbar {
+  position: relative;
+  top: auto;
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  width: 100%;
+  min-height: 88px;
+  height: auto;
+  padding: 18px 28px;
+  background: #fff;
+  border-bottom: 1px solid var(--armiet-border);
+  backdrop-filter: none;
+}
+
+.admin-page-shell .topbar-left,
+.admin-page-shell .topbar-right {
+  min-width: 0;
+}
+
+.admin-page-shell .topbar-left {
+  flex: 1 1 240px;
+}
+
+.admin-page-shell .topbar-right {
+  flex: 0 1 auto;
+  margin-left: auto;
+}
+
+.admin-page-shell .topbar h1 {
+  color: #172033;
+  overflow-wrap: anywhere;
+}
+
+.admin-page-shell .dashboard-content {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+.admin-page-shell .dashboard-card {
+  background: #fff;
+  border-color: var(--armiet-border);
+  border-radius: 13px;
+  box-shadow: 0 4px 14px rgba(57,7,18,.05);
+}
+
+.admin-page-shell .primary-button,
+.admin-page-shell .action-button.start-button {
+  background: var(--armiet-maroon);
+  border-color: var(--armiet-maroon);
+  color: #fff;
+}
+
+.admin-page-shell .primary-button:hover,
+.admin-page-shell .action-button.start-button:hover {
+  background: var(--armiet-dark);
+  border-color: var(--armiet-dark);
+}
+
+/* Responsive layout */
+@media (max-width: 1200px) {
+  .admin-page-shell > .college-brand-header {
+    grid-template-columns: 160px minmax(0, 1fr) 190px;
+    gap: 16px;
+    padding: 16px 20px;
+  }
+
+  .admin-page-shell .college-brand-name > strong,
+  .admin-page-shell .college-brand-name h2 {
+    font-size: 14px;
+  }
+
+  .admin-page-shell > .admin-horizontal-nav {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .admin-page-shell .admin-sidebar {
+    flex-basis: 230px;
+    width: 230px;
+  }
+
+  .admin-page-shell .dashboard-content {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 800px) {
+  .admin-page-shell > .college-brand-header {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 12px;
+    padding: 18px 14px;
+  }
+
+  .admin-page-shell .college-logo {
+    max-width: 170px;
+  }
+
+  .admin-page-shell .college-brand-name > strong {
+    font-size: 13px;
+  }
+
+  .admin-page-shell .college-brand-name h2 {
+    font-size: 14px;
+  }
+
+  .admin-page-shell .college-system-mark {
+    justify-content: center;
+  }
+
+  .admin-page-shell > .admin-horizontal-nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .admin-page-shell .horizontal-nav-profile {
+    margin-left: 8px;
+  }
+
+  .admin-page-shell > .app-shell.admin-shell {
+    min-height: 0;
+  }
+
+  .admin-page-shell .admin-sidebar,
+  .admin-page-shell .admin-sidebar.collapsed {
+    flex-basis: 76px;
+    width: 76px;
+  }
+
+  .admin-page-shell .admin-sidebar .brand {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .admin-page-shell .admin-sidebar .brand-text,
+  .admin-page-shell .admin-sidebar .nav-section-title,
+  .admin-page-shell .admin-sidebar .nav-item span,
+  .admin-page-shell .admin-sidebar .collapse-button span {
+    display: none;
+  }
+
+  .admin-page-shell .admin-sidebar .nav-item {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .admin-page-shell .main-area > .topbar {
+    padding: 16px;
+  }
+
+  .admin-page-shell .dashboard-content {
+    padding: 18px 14px;
+  }
+
+  .admin-page-shell .topbar-right {
+    flex-basis: 100%;
+    margin-left: 0;
+  }
+
+  .admin-page-shell .search-box {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .admin-page-shell > .app-shell.admin-shell {
+    display: block;
+  }
+
+  .admin-page-shell .admin-sidebar,
+  .admin-page-shell .admin-sidebar.collapsed {
+    display: none;
+  }
+
+  .admin-page-shell .main-area,
+  .admin-page-shell .main-area.expanded {
+    width: 100%;
+    min-height: 0;
+  }
+
+  .admin-page-shell .topbar-left {
+    flex-basis: 100%;
+  }
+
+  .admin-page-shell .topbar-right {
+    display: none;
+  }
+
+  .admin-page-shell .horizontal-nav-profile .user-info {
+    display: none;
+  }
+
+  .admin-page-shell .dashboard-content {
+    padding: 16px 12px;
+  }
+}
+
+/* ===== STUDENT PORTAL: ADMIN MAROON-GOLD THEME ===== */
+
+.student-college-header {
+  background: #ffffff;
+  border-bottom: 3px solid #e5b957;
+}
+
+.student-college-header .college-brand-name > strong,
+.student-college-header .college-brand-name h2 {
+  color: #701326;
+}
+
+.student-college-header .college-system-icon {
+  background: #701326;
+  border-color: #701326;
+  color: #ffffff;
+}
+
+/* Student sidebar */
+.student-layout .sidebar,
+.student-layout .student-sidebar,
+.student-layout .app-sidebar {
+  background: linear-gradient(180deg, #390712, #650d20);
+}
+
+.student-layout .sidebar .nav-item,
+.student-layout .student-sidebar .nav-item,
+.student-layout .app-sidebar .nav-item {
+  color: #f4e9eb;
+}
+
+.student-layout .sidebar .nav-item.active,
+.student-layout .student-sidebar .nav-item.active,
+.student-layout .app-sidebar .nav-item.active {
+  background: #e5b957;
+  color: #390712;
+}
+
+/* Student buttons */
+.student-layout .primary-button,
+.student-layout button.primary-button {
+  background: #650d20;
+  border-color: #650d20;
+  color: #ffffff;
+}
+
+.student-layout .primary-button:hover,
+.student-layout button.primary-button:hover {
+  background: #390712;
+  border-color: #390712;
+}
+
+/* Student page headings and accents */
+.student-layout .eyebrow {
+  color: #701326;
+}
+
+.student-layout .text-button {
+  color: #701326;
+}
+
+/* Student cards */
+.student-layout .dashboard-card,
+.student-layout .kpi-card {
+  border-color: #eadde0;
+}
+
+/* Student links */
+.student-layout a:hover {
+  color: #701326;
+}
+
+/* ===== STUDENT PORTAL MAROON-GOLD THEME ===== */
+
+/* College header */
+.student-college-header {
+  background: #ffffff;
+  border-bottom: 3px solid #e5b957;
+}
+
+.student-college-header .college-brand-name > strong,
+.student-college-header .college-brand-name h2 {
+  color: #701326;
+}
+
+.student-college-header .college-system-icon {
+  background: #701326;
+  border-color: #701326;
+  color: #ffffff;
+}
+
+/* Student topbar */
+.student-college-header + .topbar {
+  border-bottom: 1px solid #eadde0;
+}
+
+.student-college-header + .topbar h1 {
+  color: #390712;
+}
+
+/* Student dashboard buttons */
+.student-college-header ~ .dashboard-content .primary-button {
+  background: #650d20;
+  border-color: #650d20;
+  color: #ffffff;
+}
+
+.student-college-header ~ .dashboard-content .primary-button:hover {
+  background: #390712;
+  border-color: #390712;
+}
+
+.student-college-header ~ .dashboard-content .text-button {
+  color: #701326;
+}
+
+/* Student dashboard cards */
+.student-college-header ~ .dashboard-content .dashboard-card,
+.student-college-header ~ .dashboard-content .kpi-card {
+  border-color: #eadde0;
+}
+
+/* Student dashboard headings */
+.student-college-header ~ .dashboard-content .eyebrow {
+  color: #701326;
+}
+
+/* ===== STUDENT SIDEBAR: MAROON + GOLD ===== */
+
+.app-shell > .sidebar {
+  background: linear-gradient(180deg, #390712 0%, #650d20 100%) !important;
+  border-right: 1px solid #4b0a18 !important;
+}
+
+.app-shell > .sidebar .brand-icon,
+.app-shell > .sidebar .student-brand-icon {
+  background: #e5b957 !important;
+  color: #390712 !important;
+}
+
+.app-shell > .sidebar .brand-text,
+.app-shell > .sidebar .student-brand-text {
+  color: #ffffff !important;
+}
+
+.app-shell > .sidebar .nav-section-title {
+  color: #e5b957 !important;
+}
+
+.app-shell > .sidebar .nav-item {
+  color: #f4e9eb !important;
+}
+
+.app-shell > .sidebar .nav-item:hover {
+  background: rgba(229, 185, 87, 0.15) !important;
+  color: #ffffff !important;
+}
+
+.app-shell > .sidebar .nav-item.active {
+  background: #e5b957 !important;
+  color: #390712 !important;
+  box-shadow: none !important;
+}
+
+.app-shell > .sidebar .collapse-button,
+.app-shell > .sidebar .sidebar-bottom button {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.app-shell > .sidebar .collapse-button:hover,
+.app-shell > .sidebar .sidebar-bottom button:hover {
+  background: rgba(229, 185, 87, 0.18) !important;
+}
+/* Fix: My Complaints table escalation text overlap */
+.complaint-table {
+  table-layout: fixed;
+  min-width: 1050px;
+}
+
+.complaint-table th,
+.complaint-table td {
+  vertical-align: top;
+}
+
+.complaint-table td:nth-child(7) {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.complaint-table td:nth-child(7) > div {
+  max-width: 100%;
+}
+
+.complaint-table td:nth-child(8) {
+  white-space: nowrap;
+  width: 110px;
+}
+/* Improved My Complaints table column layout */
+.complaint-table {
+  min-width: 1250px;
+  table-layout: fixed;
+}
+
+.complaint-table th:nth-child(1),
+.complaint-table td:nth-child(1) {
+  width: 8%;
+}
+
+.complaint-table th:nth-child(7),
+.complaint-table td:nth-child(7) {
+  width: 30%;
+}
+
+.complaint-table th:nth-child(8),
+.complaint-table td:nth-child(8) {
+  width: 10%;
+  white-space: nowrap;
+}
+
+.complaint-table th:nth-child(9),
+.complaint-table td:nth-child(9) {
+  width: 8%;
+  white-space: nowrap;
+}
+
+.complaint-table td:nth-child(7) {
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+.complaint-table td:nth-child(7) > div {
+  max-width: 100%;
+}
+/* Add breathing space between authority and escalation columns */
+.complaint-table th:nth-child(6),
+.complaint-table td:nth-child(6) {
+  padding-right: 28px;
+}
+
+.complaint-table th:nth-child(7),
+.complaint-table td:nth-child(7) {
+  padding-left: 28px;
+}
+/* Align Status heading and content */
+.complaint-table th:nth-child(5),
+.complaint-table td:nth-child(5) {
+  text-align: center;
+}
+
+.complaint-table td:nth-child(5) .status-badge {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Admin Dashboard layout alignment fix */
+.admin-page .stats-grid {
+  align-items: stretch;
+}
+
+.admin-page .stat-card {
+  min-width: 0;
+  height: 100%;
+}
+
+.admin-page .admin-complaints-card {
+  width: 100%;
+  min-width: 0;
+}
+
+.admin-page .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.admin-page .complaints-table {
+  width: 100%;
+  table-layout: auto;
+}
+
+.admin-page .complaints-table th,
+.admin-page .complaints-table td {
+  vertical-align: middle;
+}
+
+.admin-page .admin-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-width: 150px;
+}
+
+.admin-page .action-button {
+  flex-shrink: 0;
+}
+
+.admin-page .completed-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .admin-page .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-page .stats-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .admin-page .admin-actions {
+    min-width: 150px;
+  }
+}
