@@ -45,7 +45,11 @@ function AdminDashboard() {
 
       const response = await axios.get(API_URL)
 
-      setComplaints(response.data)
+      setComplaints(
+  [...response.data].sort(
+    (a, b) => Number(b.id) - Number(a.id)
+  )
+)
     } catch (err) {
       console.error(err)
 
@@ -530,7 +534,7 @@ function AdminDashboard() {
                     <th>ID</th>
                     <th>Student</th>
                     <th>Category</th>
-                    <th>Department</th>
+                    <th>Student Department</th>
                     <th>Priority</th>
                     <th>Status</th>
                     <th>Current Authority</th>
@@ -584,10 +588,12 @@ function AdminDashboard() {
 
                           {/* DEPARTMENT */}
 
-                          <td>
-                            {complaint.department ||
-                              'General Department'}
-                          </td>
+                          
+{/* STUDENT DEPARTMENT */}
+<td>
+  {complaint.studentDepartment || '-'}
+</td>
+
 
 
                           {/* PRIORITY */}

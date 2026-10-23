@@ -17,10 +17,12 @@ function SubmitComplaint() {
   const navigate = useNavigate()
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    description: '',
-  })
+  name: '',
+  email: '',
+  description: '',
+  studentDepartment: '',
+  armietPin: '',
+})
 
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(null)
@@ -61,14 +63,18 @@ function SubmitComplaint() {
     try {
       setLoading(true)
 
-     const response = await axios.post(
+     
+const response = await axios.post(
   '/api/complaints',
   {
-          name: formData.name,
-          email: formData.email,
-          description: formData.description,
-        }
-      )
+    name: formData.name,
+    email: formData.email,
+    description: formData.description,
+    studentDepartment: formData.studentDepartment,
+    armietPin: formData.armietPin,
+  }
+)
+
 
       setSuccess(response.data)
 
@@ -388,6 +394,79 @@ function SubmitComplaint() {
             </div>
 
           </div>
+
+          
+{/* Student Department */}
+<div style={{ marginBottom: '22px' }}>
+  <label
+    htmlFor="studentDepartment"
+    style={{
+      display: 'block',
+      fontWeight: 600,
+      marginBottom: '8px',
+    }}
+  >
+    Select Your Department *
+  </label>
+
+  <select
+    id="studentDepartment"
+    name="studentDepartment"
+    value={formData.studentDepartment}
+    onChange={handleChange}
+    disabled={loading}
+    required
+    style={{
+      width: '100%',
+      padding: '13px 14px',
+      border: '1px solid #dbe3ef',
+      borderRadius: '10px',
+      outline: 'none',
+      background: '#fff',
+    }}
+  >
+    <option value="">Choose your department</option>
+    <option value="CSE (AIML)">CSE (AIML)</option>
+    <option value="CE">CE</option>
+    <option value="IT">IT</option>
+    <option value="Mechanical">Mechanical</option>
+    <option value="Electrical">Electrical</option>
+    <option value="Other">Other</option>
+  </select>
+</div>
+
+{/* ARMIET PIN */}
+<div style={{ marginBottom: '22px' }}>
+  <label
+    htmlFor="armietPin"
+    style={{
+      display: 'block',
+      fontWeight: 600,
+      marginBottom: '8px',
+    }}
+  >
+    Enter Your ARMIET PIN *
+  </label>
+
+  <input
+    id="armietPin"
+    name="armietPin"
+    type="text"
+    value={formData.armietPin}
+    onChange={handleChange}
+    placeholder="Enter your ARMIET PIN"
+    disabled={loading}
+    required
+    style={{
+      width: '100%',
+      padding: '13px 14px',
+      border: '1px solid #dbe3ef',
+      borderRadius: '10px',
+      outline: 'none',
+    }}
+  />
+</div>
+
 
 
           {/* Description */}

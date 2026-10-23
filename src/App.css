@@ -1367,106 +1367,102 @@
 
 
 .table-wrapper {
-
- width: 100%;
-
- overflow-x: auto;
-
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 10px;
 }
-
-
 
 .complaint-table {
-
- width: 100%;
-
- border-collapse: collapse;
-
-
-
- font-size: 11px;
-
+  width: 100%;
+  min-width: 1250px;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 12px;
 }
-
-
 
 .complaint-table th {
-
- padding: 12px 16px;
-
-
-
- background: #f8fafc;
-
-
-
- color: var(--text-muted);
-
-
-
- font-size: 9px;
-
- font-weight: 700;
-
- text-align: left;
-
-
-
- text-transform: uppercase;
-
- letter-spacing: 0.5px;
-
-
-
- white-space: nowrap;
-
+  padding: 14px 12px;
+  background: #f8fafc;
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  white-space: normal;
+  overflow-wrap: break-word;
+  vertical-align: middle;
 }
-
-
 
 .complaint-table td {
-
- padding: 15px 16px;
-
-
-
- border-top: 1px solid #f1f5f9;
-
-
-
- color: var(--text-secondary);
-
-
-
- white-space: nowrap;
-
+  padding: 16px 12px;
+  border-top: 1px solid #f1f5f9;
+  color: var(--text-secondary);
+  white-space: normal;
+  overflow-wrap: anywhere;
+  vertical-align: middle;
+  line-height: 1.5;
 }
 
+.complaint-table th:nth-child(1),
+.complaint-table td:nth-child(1) {
+  width: 90px;
+}
 
+.complaint-table th:nth-child(2),
+.complaint-table td:nth-child(2) {
+  width: 110px;
+}
+
+.complaint-table th:nth-child(3),
+.complaint-table td:nth-child(3) {
+  width: 145px;
+}
+
+.complaint-table th:nth-child(4),
+.complaint-table td:nth-child(4) {
+  width: 95px;
+}
+
+.complaint-table th:nth-child(5),
+.complaint-table td:nth-child(5) {
+  width: 105px;
+}
+
+.complaint-table th:nth-child(6),
+.complaint-table td:nth-child(6) {
+  width: 130px;
+}
+
+.complaint-table th:nth-child(7),
+.complaint-table td:nth-child(7) {
+  width: 280px;
+}
+
+.complaint-table th:nth-child(8),
+.complaint-table td:nth-child(8) {
+  width: 115px;
+}
+
+.complaint-table th:nth-child(9),
+.complaint-table td:nth-child(9) {
+  width: 80px;
+  text-align: center;
+}
 
 .complaint-table tbody tr {
-
- transition: background 0.15s ease;
-
+  transition: background 0.15s ease;
 }
-
-
 
 .complaint-table tbody tr:hover {
-
- background: #f8fafc;
-
+  background: #f8fafc;
 }
-
-
 
 .complaint-table td strong {
-
- color: var(--primary);
-
- font-weight: 650;
-
+  color: var(--primary);
+  font-weight: 650;
 }
+
 
 
 

@@ -20,7 +20,11 @@ function MyComplaints() {
       setError('')
 
       const response = await axios.get('/api/complaints')
-      setComplaints(response.data)
+      setComplaints(
+  [...response.data].sort(
+    (a, b) => Number(b.id) - Number(a.id)
+  )
+)
     } catch (err) {
       console.error(err)
       setError(
@@ -43,6 +47,8 @@ function MyComplaints() {
       String(complaint.id).includes(text) ||
       complaint.category?.toLowerCase().includes(text) ||
       complaint.department?.toLowerCase().includes(text) ||
+      complaint.studentDepartment?.toLowerCase().includes(text) ||
+String(complaint.armietPin || '').toLowerCase().includes(text) ||
       complaint.status?.toLowerCase().includes(text) ||
       complaint.currentAuthority?.toLowerCase().includes(text) ||
       complaint.lastActionRemark?.toLowerCase().includes(text)
@@ -183,7 +189,8 @@ function MyComplaints() {
                 <tr>
                   <th>Complaint ID</th>
                   <th>Category</th>
-                  <th>Department</th>
+                  <th>Student Department</th>
+
                   <th>Priority</th>
                   <th>Status</th>
                   <th>Current Authority</th>
@@ -202,7 +209,8 @@ function MyComplaints() {
 
                     <td>{complaint.category || '-'}</td>
 
-                    <td>{complaint.department || '-'}</td>
+                    <td>{complaint.studentDepartment || '-'}</td>
+
 
                     <td>
                       <span
